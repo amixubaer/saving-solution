@@ -16,23 +16,35 @@ const foodExpense = document.getElementById('foodExpense');
     const clothAmountText = clothExpense.value;
     const clothAmount = parseFloat(clothAmountText); 
 
-
+//alert
+const failError = document.getElementById('notify-fail');
 
 
     // calculate total expense
-     
-    const expenseTotal = document.getElementById('expense-total');
-     const expenseTotalText = expenseTotal.innerText;
-     const previousExpenseTotal = parseFloat(expenseTotalText);
- 
-     expenseTotal.innerText = previousExpenseTotal + foodAmount + rentAmount + clothAmount;
-
+     if (incomeAmount >0 && foodAmount > 0  && rentAmount >0 && clothAmount){
+        const expenseTotal = document.getElementById('expense-total');
+        const expenseTotalText = expenseTotal.innerText;
+        const previousExpenseTotal = parseFloat(expenseTotalText);
+    
+        expenseTotal.innerText = previousExpenseTotal + foodAmount + rentAmount + clothAmount;
+   
+     }
+     else
+     {
+     failError.style.display = 'block';}
+    
     //  update balance
+    if (incomeAmount >0 && foodAmount > 0  && rentAmount >0 && clothAmount){
     const balanceTotal = document.getElementById('balance-total');
     const balanceTotalText = balanceTotal.innerText;
     const previousBalanceTotal = parseFloat(balanceTotalText);
     balanceTotal.innerText = previousBalanceTotal + incomeAmount - foodAmount - rentAmount - clothAmount ; 
 
+   
+    }
+    else{
+        failError.style.display = 'block';
+    }
     // clear fields
     incomeInput.value = ' ';
     foodExpense.value = ' ';
