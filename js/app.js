@@ -1,10 +1,11 @@
+//click on calculate button
 document.getElementById('calculate-btn').addEventListener('click', function(){
 // Income
     const incomeInput = document.getElementById('incomeInput');
     const incomeAmountText = incomeInput.value;
     const incomeAmount = parseFloat(incomeAmountText); 
 // Expense
-const foodExpense = document.getElementById('foodExpense');
+    const foodExpense = document.getElementById('foodExpense');
     const foodAmountText = foodExpense.value;
     const foodAmount = parseFloat(foodAmountText); 
 
@@ -21,16 +22,8 @@ const foodExpense = document.getElementById('foodExpense');
 //alert
 const failError = document.getElementById('notify-fail');
 
-//current balance
-function getCurrentBalance() {
-    const balanceTotal = document.getElementById('balance-total');
-    const balanceTotalText = balanceTotal.innerText;
-    const previousBalanceTotal = parseFloat(balanceTotalText);
-    return previousBalanceTotal;
-}
-
             // calculate total expense
-            if (incomeAmount >0 && foodAmount > 0  && rentAmount >0 && clothAmount && incomeAmount>(foodAmount+rentAmount+clothAmount)){
+            if (incomeAmount >0 && foodAmount >= 0  && rentAmount >=0 && clothAmount >=0 && incomeAmount>(foodAmount+rentAmount+clothAmount)){
                 const expenseTotal = document.getElementById('expense-total');
                 const expenseTotalText = expenseTotal.innerText;
                 const previousExpenseTotal = parseFloat(expenseTotalText);
@@ -45,7 +38,7 @@ function getCurrentBalance() {
              failError.style.display = 'block';}
             
             //  update balance
-            if (incomeAmount >0 && foodAmount > 0  && rentAmount >0 && clothAmount && incomeAmount>(foodAmount+rentAmount+clothAmount)){
+            if (incomeAmount >0 && foodAmount >= 0  && rentAmount >= 0 && clothAmount >= 0 && incomeAmount>(foodAmount+rentAmount+clothAmount)){
             const balanceTotal = document.getElementById('balance-total');
             const balanceTotalText = balanceTotal.innerText;
             const previousBalanceTotal = parseFloat(balanceTotalText);
@@ -56,7 +49,11 @@ function getCurrentBalance() {
             else{
                 failError.style.display = 'block';
             }
-        
-             
-  
-})
+});
+
+
+// Save button click
+document.getElementById('save-btn').addEventListener('click', function(){
+//
+
+});
