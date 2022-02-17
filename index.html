@@ -21,10 +21,10 @@
     <!-- Main body -->
     <main>
       <section class="container">
-        <!-- left image -->
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-2 g-4">
-          <div class="col border-0 pe-3 rounded-3">
-            <img src="./images/money.jpg" alt="" class="img-fluid mb-5" />
+          <!-- left image -->
+          <div class="col border-0 pe-3 rounded-3 mb-5">
+            <img src="./images/money.jpg" alt="" class="img-fluid" />
           </div>
           <!-- right side contents -->
           <div class="col border rounded-3 background mb-5 py-5">
@@ -85,23 +85,25 @@
               <button
                 id="calculate-btn"
                 type="submit"
-                class="calculate-btn bg-primary text-light border-0 my-2 mx-5 py-2"
+                class="calculate-btn bg-primary text-light border-0 my-2 mx-5 py-2 col-10 rounded-pill"
               >
                 Calculate
               </button>
             </div>
             <!-- Calculate -->
-            <div>
-              <h3 class="">
-                Total Expense: <span id="expense-total">00</span>
-              </h3>
-            </div>
+            <div class="mx-3 my-2">
+              <div>
+                <h3 class="">
+                  Total Expense: <span id="expense-total">00</span>
+                </h3>
+              </div>
 
-            <div>
-              <h3 class="">Balance: <span id="balance-total">00</span></h3>
+              <div>
+                <h3 class="">Balance: <span id="balance-total">00</span></h3>
+              </div>
             </div>
             <!-- Alert for calculate button-->
-            <div class="notify-section my-3">
+            <div class="notify-section my-2">
               <p id="calculate-error" class="notify">
                 Expenses cannot be more than Balance and values cannot be
                 negative
@@ -120,28 +122,30 @@
                   placeholder="Saving percentage"
                 />
               </div>
-              <div><p class="ps-2 pe-2">%</p></div>
+              <div><p class="px-1">%</p></div>
               <button
                 id="save-btn"
                 type="submit"
-                class="save-btn bg-primary text-light border-0 mb-2"
+                class="save-btn bg-primary text-light border-0 mb-2 px-4 rounded-pill"
               >
                 Save
               </button>
             </div>
             <!-- savings calculation -->
-            <div>
-              <h3 class="saveAmount">
-                Saving Amount: <span id="saving-total">00</span>
-              </h3>
-            </div>
-            <div>
-              <h3 class="remainingBalance">
-                Remaining Balance: <span id="remaining-total">00</span>
-              </h3>
+            <div class="mx-3 my-2">
+              <div>
+                <h3 class="saveAmount">
+                  Saving Amount: <span id="saving-total">00</span>
+                </h3>
+              </div>
+              <div>
+                <h3 class="remainingBalance">
+                  Remaining Balance: <span id="remaining-total">00</span>
+                </h3>
+              </div>
             </div>
             <!-- Alert for Save button-->
-            <div class="notify-section my-3">
+            <div class="notify-section my-2">
               <p id="save-error" class="notify">
                 Saving values cannot be negative
               </p>
