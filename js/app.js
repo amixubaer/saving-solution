@@ -17,10 +17,8 @@ document.getElementById('calculate-btn').addEventListener('click', function(){
     const clothAmountText = clothExpense.value;
     const clothAmount = parseFloat(clothAmountText); 
 
-
-
-//alert
-const failError = document.getElementById('notify-fail');
+    //alert
+    const calculateError = document.getElementById('calculate-error');
 
             // calculate total expense
             if (incomeAmount >0 && foodAmount >= 0  && rentAmount >=0 && clothAmount >=0 && incomeAmount>(foodAmount+rentAmount+clothAmount)){
@@ -30,12 +28,12 @@ const failError = document.getElementById('notify-fail');
             
                 expenseTotal.innerText = previousExpenseTotal + foodAmount + rentAmount + clothAmount;
               
-                failError.style.display = 'none';
+                calculateError.style.display = 'none';
            
              }
              else
              {
-             failError.style.display = 'block';}
+             calculateError.style.display = 'block';}
             
             //  update balance
             if (incomeAmount >0 && foodAmount >= 0  && rentAmount >= 0 && clothAmount >= 0 && incomeAmount>(foodAmount+rentAmount+clothAmount)){
@@ -44,16 +42,34 @@ const failError = document.getElementById('notify-fail');
             const previousBalanceTotal = parseFloat(balanceTotalText);
             balanceTotal.innerText = previousBalanceTotal + incomeAmount - foodAmount - rentAmount - clothAmount ; 
           
-            failError.style.display = 'none';
+           calculateError.style.display = 'none';
             }
             else{
-                failError.style.display = 'block';
+                calculateError.style.display = 'block';
             }
 });
 
 
 // Save button click
 document.getElementById('save-btn').addEventListener('click', function(){
-//
+    //Taking value from savings and income field
+const Income = document.getElementById("incomeInput").value;
+const Savings = document.getElementById("saveInput").value;
+//Alert
+const saveError = document.getElementById('save-error');
 
+if (Savings >= 0){
+    //Show Savings balance
+document.getElementById("saving-total").innerHTML = (Income * Savings) / 100;
+
+//Show remaining balance
+const Balance = document.getElementById("balance-total").innerHTML;
+const AllSave = document.getElementById("saving-total").innerHTML;
+
+document.getElementById("remaining-total").innerHTML = Balance - AllSave;
+saveError.style.display = 'none';
+}
+else{
+    saveError.style.display = 'block';
+}
 });

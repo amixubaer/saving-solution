@@ -100,10 +100,11 @@
             <div>
               <h3 class="">Balance: <span id="balance-total">00</span></h3>
             </div>
-            <!-- Alert -->
+            <!-- Alert for calculate button-->
             <div class="notify-section my-3">
-              <p id="notify-fail" class="notify">
-                Expenses cannot be less than zero and balance cannot be negative
+              <p id="calculate-error" class="notify">
+                Expenses cannot be more than Balance and values cannot be
+                negative
               </p>
             </div>
 
@@ -130,12 +131,20 @@
             </div>
             <!-- savings calculation -->
             <div>
-              <h3 class="">Saving Amount: <span id="saving-total">00</span></h3>
+              <h3 class="saveAmount">
+                Saving Amount: <span id="saving-total">00</span>
+              </h3>
             </div>
             <div>
-              <h3 class="">
+              <h3 class="remainingBalance">
                 Remaining Balance: <span id="remaining-total">00</span>
               </h3>
+            </div>
+            <!-- Alert for Save button-->
+            <div class="notify-section my-3">
+              <p id="save-error" class="notify">
+                Saving values cannot be negative
+              </p>
             </div>
           </div>
         </div>
